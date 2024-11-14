@@ -1,73 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="LoginPage1.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- <remember me style> -->
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Agdasima:wght@400;700&family=Kablammo&display=swap');
+      </style>
+      
+    <title>Login Page</title>
+  </head>
+  <body>
+    <header class="header" id="header">
+      <nav class="nav container1">
+          <a href="#" class="nav__logo">MatrixAccess</a>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <div class="nav__menu" id="nav-menu">
+              <ul class="nav__list">
+                  <li>
+                      <a href="file:///C:/FeeProjectRfidPortal/FirstPage/FirstPageArch.html#" class="nav__link">Home</a>
+                  </li>
+                  <li>
+                      <a href="file:///C:/FeeProjectRfidPortal/LoginPage/LoginPage.html" class="nav__link">SignIn</a>
+                  </li>
+                  <li>
+                      <a href="file:///C:/FeeProjectRfidPortal/T&Cs/Terms.html" class="nav__link">T&Cs</a>
+                  </li>
+                  <li>
+                      <a href="file:///C:/FeeProjectRfidPortal/Industries/Industries.html" class="nav__link">Industries</a>
+                  </li>
+                  <li>
+                      <a href="file:///C:/FeeProjectRfidPortal/FirstPage/AboutUs.html" class="nav__link">Contact</a>
+                  </li>
+              </ul>
+              <!-- <close button> -->
+              <div class="nav__close" id="nav-close">
+                  <i class="ri-close-line"></i>
+              </div>
+          </div>
 
-    <link rel="stylesheet" href="LoginPage1.css">
-
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>        <!--https://boxicons.com/ -->
-
-    <title>Login & Register Page  ->> Code With Patel</title>
-</head>
-
-<body>
-
+          <!-- <toogle buttone> -->
+              <div class="nav__toggle" id="nav-toggle">
+                  <i class="ri-menu-4-line"></i>
+              </div>
+      </nav>
+    </header>
     <div class="container" id="container">
-        <div class="form-container sign-up">
-            <form>
-                <h1>Create Account</h1>
-                <div class="social-icons">
-                    <a href="#" class="icons"><i class='bx bxl-google'></i></a>
-                    <a href="#" class="icons"><i class='bx bxl-facebook'></i></a>
-                    <a href="#" class="icons"><i class='bx bxl-github'></i></a>
-                    <a href="#" class="icons"><i class='bx bxl-linkedin'></i></a>
-                </div>
-                <span>Register with E-mail</span>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="Enter E-mail">
-                <input type="password" placeholder="Enter Password">
-                <button>Sign Up</button>
-            </form>
-        </div>
-
-
-        <div class="form-container sign-in">
-            <form>
-                <h1>Sign In</h1>
-                <div class="social-icons">
-                    <a href="#" class="icons"><i class='bx bxl-google'></i></a>
-                    <a href="#" class="icons"><i class='bx bxl-facebook'></i></a>
-                    <a href="#" class="icons"><i class='bx bxl-github'></i></a>
-                    <a href="#" class="icons"><i class='bx bxl-linkedin'></i></a>
-                </div>
-                <span>Login With Email & Password</span>
-                <input type="email" placeholder="Enter E-mail">
-                <input type="password" placeholder="Enter Password">
-                <a href="#">Forget Password?</a>
-                <button>Sign In</button>
-            </form>
-        </div>
-
-
-        <div class="toggle-container">
-            <div class="toggle">
-                <div class="toggle-panel toggle-left">
-                    <h1>Welcome To <br>Gaming Mania</h1>
-                    <p>Sign in With ID & Passowrd</p>
-                    <button class="hidden" id="login">Sign In</button>
-                </div>
-                <div class="toggle-panel toggle-right">
-                    <h1>Hii Users</h1>
-                    <p>Join "Gaming Mania" to Improve Your Mental Skills</p>
-                    <button class="hidden" id="register">Sign Up</button>
+      <div class="sign-up">
+        <form onsubmit="return validateSignup()">
+            <h1>Create Account</h1>
+            <div class="icons">
+                <a href="https://www.facebook.com/" class="icon"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://www.instagram.com/" class="icon"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.google.co.in/" class="icon"><i class="fa-brands fa-google"></i></a>
+                <a href="https://github.com/" class="icon"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <span>or use email for registration</span>
+            <input type="text" id="signupName" placeholder="Name" />
+            <input type="text" id="signupEmail" placeholder="Email" />
+            <input type="password" id="signupPassword" placeholder="Password" />
+            <a href="#" id="terms-link" onclick="openModal()">Terms and Conditions</a>
+    
+            <!-- Terms and Conditions Modal -->
+            <div id="terms-modal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeModal()">&times;</span>
+                    <p>Click to view the <u><a href="file:///C:/FeeProjectRfidPortal/T&Cs/Terms.html">Terms and Conditions</a></u></p>
+                    <button class="my-button" onclick="window.open('file:///C:/FeeProjectRfidPortal/IdManagementAndFeedbackPage/IdManage.html', '_blank')">I Agree</button>
+                    <button class="my-button" onclick="closeModal()">I Disagree</button>
                 </div>
             </div>
-        </div>
+    
+            <button type="submit">Sign Up</button>
+        </form>
     </div>
-
-   <script src="LoginPage2.js"></script>
-</body>
-
+    <div class="sign-in">
+      <form onsubmit="return validateSignin()">
+          <h1>Sign In</h1>
+          <div class="icons">
+              <a href="https://www.facebook.com/" class="icon"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.instagram.com/" class="icon"><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://www.google.co.in/" class="icon"><i class="fa-brands fa-google"></i></a>
+              <a href="https://github.com/" class="icon"><i class="fa-brands fa-github"></i></a>
+          </div>
+          <span>or use email password</span>
+          <input type="text" placeholder="Email" id="loginUsername" />
+          <input type="password" placeholder="Password" id="loginPassword" />
+  
+          <label class="kablammo-example" style="font-size: 25px;">
+              <input type="checkbox" id="rememberMe"> Remember Me
+          </label>
+  
+          <a href="ForgotPass.html">Forgot password?</a>
+          <button type="submit" id="loginBtn">Sign In</button>
+      </form>
+  </div>
+      <div class="toogle-container">
+        <div class="toogle">
+          <div class="toogle-panel toogle-left">
+            <h1>Welcome User!</h1>
+            <p>If you already have an account</p>
+            <button class="hidden" id="login">Sign In</button>
+          </div>
+          <div class="toogle-panel toogle-right">
+            <h1>Hello, User!</h1>
+            <p>If you don't have an account</p>
+            <button class="hidden" id="register">Sign Up</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="LoginPage2.js"></script>
+  </body>
 </html>
